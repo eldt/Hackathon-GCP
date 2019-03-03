@@ -69,15 +69,15 @@ def DriverScript():
                 line = busVect[i]
                 print(line, file=outfile)
             outfile.close()
-        if(word == '2')
+        if(word == '2'):
             print("This should print the students on the bus")
-        if(word == '3')
+        if(word == '3'):
             a = input("Input a latitide: ")
             b = input("Input a longitude: ")
             a = float(a)
             b = float(b)
             GeoScript(a,b)
-        if(word == '0')
+        if(word == '0'):
             break
 
 
