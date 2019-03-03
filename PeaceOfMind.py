@@ -16,6 +16,12 @@ try:
 except:
     openfile = open("Drivers.txt", "w+")
     openfile.close()
+try:
+    openfile = open("Stops.txt", "r")
+    openfile.close()
+except:
+    openfile = open("Stops.txt", "w+")
+    openfile.close()
 
 def main():
     print("Welcome to PeaceOfMind")
