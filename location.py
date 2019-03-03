@@ -2,8 +2,6 @@ from datetime import datetime
 
 import googlemaps
 
-A = input("latitude = ")
-B = input("longitude= ")
 GeoScript(float(A),float(B))
 def GeoScript(latvar, longvar):
     gmap = googlemaps.Client(key= 'AIzaSyD98Jrf_CWeR-tEug615QX_rL6Y_qXjUsw')
@@ -11,3 +9,6 @@ def GeoScript(latvar, longvar):
     geo_code = gmaps.reverse_geocode((latvar, longvar))
 
     print(geo_code)
+    
+A = input("latitude = ")
+B = input("longitude= ")
