@@ -2,7 +2,8 @@ from datetime import datetime
 
 import googlemaps
 
-A, B = input("whatever message")
+A = input("latitude = ")
+B = input("longitude= ")
 GeoScript(float(A),float(B))
 def GeoScript(latvar, longvar):
     gmap = googlemaps.Client(key= 'AIzaSyD98Jrf_CWeR-tEug615QX_rL6Y_qXjUsw')
