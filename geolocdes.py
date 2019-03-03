@@ -1,6 +1,5 @@
 from datetime import datetime
 from datetime import timedelta
-from geolocation.main import GoogleMaps
 from geolocation.distance_matrix.client import DistanceMatrixApiClient
 import time
 import responses
