@@ -22,6 +22,12 @@ try:
 except:
     openfile = open("Stops.txt", "w+")
     openfile.close()
+try:
+    openfile = open("Buses.txt", "r")
+    openfile.close()
+except:
+    openfile = open("Buses.txt", "w+")
+    openfile.close()
 
 def main():
     print("Welcome to PeaceOfMind")

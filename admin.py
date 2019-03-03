@@ -12,7 +12,7 @@ def addBuss(r):
     outfile = open("Buses.txt","r")
     for line in outfile:
         first, second = line.split(",")
-        second = second.split(" ")
+        second = second[:-1].split(" ")
         temp = {first:second}
         buses.append(temp)
     outfile.close()
@@ -20,7 +20,7 @@ def addBuss(r):
     for i in range(len(buses)):
         print(buses[i])
 
-    temppair = {"r":[]}
+    temppair = {r:[]}
     buses.append(temppair)
     
     infile = open("Buses.txt", "w")
@@ -104,7 +104,7 @@ def modDriver():
         print(line, file=outfile)
 
     outfile.close()
-    addBuss(route)
+    addBuss(int(route))
 
 def manageRoute():
     route = input("What route number? ")
