@@ -2,6 +2,11 @@ from parents import *
 from admin import *
 from time import *
 
+openfile = open("IDS.txt", "w+")
+openfile.close()
+openfile = open("Drivers.txt", "w+")
+openfile.close()
+
 def main():
     print("Welcome to PeaceOfMind")
     user = ""
