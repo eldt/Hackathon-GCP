@@ -72,7 +72,7 @@ def modDriver():
 
     driveVect.append(driver + " " + route)
 
-    outfile = open("drivers.txt", "w")
+    outfile = open("Drivers.txt", "w")
     for i in range (len(driveVect)):
         line = driveVect[i]
         print(line, file=outfile)
@@ -80,12 +80,37 @@ def modDriver():
     outfile.close()
 
 def manageRoute():
-    input("What route number? ")
-    #if the route exists, delete it and start over. Otherwise, add it.
-    input("Define the route, in the form: Road name, Distance on that road, Name, Distance, ... , Name, Distance\n")
-    #write the route to the file
-    input("Enter the stops of the route in the form: Stop name, Coordinates of stop, Name, Coordinates, ... , Name, Coordinates\n")
-    #write the stops to the other file
+    route = input("What route number? ")
+    stops = input("Enter the stops of the route in the form: x-coordinate,y-coordinate x-coordinate,y-coordinate, ...")
+    stopsVect = []
+    infile = open ("Stops.txt", "r")
+    for line in infile:
+        stopsVect.append(line[:-1])
+    infile.close()
+
+    find = 0
+    while(find != -1):
+        find = -1
+        for i in range(len(stopsVect)):
+            find = stopsVect[i].find(str(route))
+            if(find != -1):
+                stopsVect.pop(i)
+                break
+        if (find != -1):
+            find = -1
+
+    print("Route: " + route)
+    print("Stops: " + stops)
+
+    stopsVect.append(route + " " + stops)
+
+    outfile = open("Stops.txt", "w")
+    for i in range (len(stopsVect)):
+        line = stopsVect[i]
+        print(line, file=outfile)
+
+    outfile.close()
+    
 
 def viewBus():
     input("View the bus on which route? ")
