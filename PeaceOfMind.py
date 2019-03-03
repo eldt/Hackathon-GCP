@@ -1,15 +1,27 @@
 from parents import *
 from admin import *
+from driver import *
 from time import *
 
-openfile = open("IDS.txt", "w+")
-openfile.close()
-openfile = open("Drivers.txt", "w+")
-openfile.close()
+#creates .txt files if they do not exist for the program
+try:
+    openfile = open("IDS.txt", "r")
+    openfile.close()
+except:
+    openfile = open("IDS.txt", "w+")
+    openfile.close()
+try:
+    openfile = open("Drivers.txt", "r")
+    openfile.close()
+except:
+    openfile = open("Drivers.txt", "w+")
+    openfile.close()
 
 def main():
     print("Welcome to PeaceOfMind")
     user = ""
+
+    
     while(not(user)):
         user = input("Please login as <Admin>, <Parent>, or <Driver>.\n"
                      +"Type <leave> to logout: ")
@@ -18,16 +30,17 @@ def main():
             print("nothing inputed, try again")
         elif(user == "leave"):
             break
-        elif(user[0] == "a"):  #input for admin
+        elif(user[0] == "a"):  #activates Admin Login
             AdminScript()
-            sleep(2)
+            sleep(1)
             user = ""
-        elif(user[0] == "p"):  #input for parent
+        elif(user[0] == "p"):  #activates parent login
             ParentScript()
-            sleep(2)
+            sleep(1)
             user = ""
-        elif(user[0] == "d"):   #input for driver
-            print("You're a driver!")
+        elif(user[0] == "d"):   #activates driver login
+            DriverScript()
+            sleep(1)
             user = ""
         else:
             print("Invalid word, please try again.")
